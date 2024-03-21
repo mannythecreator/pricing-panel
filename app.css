@@ -1,0 +1,188 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/********************************/
+
+html {
+    box-sizing: border-box;	/* sets overall width on element; factors in width of border*/
+	font-family: 'open sans', sans-serif;
+    
+}
+
+body {
+    background-color: #60a9ff;	/* blue */
+    display: flex;
+    justify-content: center;	/* horizontal */
+	align-items: center;	/* vertical */
+	min-height: 100vh;	/* view height units */
+}
+
+.panel {	/* use . to access class */
+	background-color: white;
+	border-radius: 10px;	/* rounds corners */
+	padding: 15px 25px;	/* top-bottom left-right */ /* spaces out content from border */
+	width: 100%;	/* 100% width of parent (entire body) */
+	max-width: 960px;	/* ultimately limits width */
+
+	/* designing mobile look first; stacked look */
+	display: flex;	/* makes content row-based */
+	flex-direction: column; /* fix display:flex: to column based */;
+	text-align: center;	/* moves all content to center */
+	text-transform: uppercase; /* capitalize everthing in panel */
+}
+
+.pricing-plan {
+	border-bottom: 1px solid #e1f1ff; /* sets border on bottom of each of the 3 sections in panel */
+}
+
+.pricing-plan:last-child {
+	border-bottom: none;	/* gets rid of last border */
+}
+
+.pricing-img {	/* each img is labeled under this class */
+	margin-bottom: 25px; /* adds space under pics*/
+	max-width: 100%;
+}
+
+.pricing-header {	/* "personal", "small team", and "enterprise" */
+	color: #888;
+	font-weight: 600;
+	letter-spacing: 1px;
+}
+
+.pricing-features {
+	margin: 50px 0 25px;
+	color: #016ff9;	/* blue */
+}
+
+.pricing-features-item {
+	font-weight: 600;		/* bolds */
+	letter-spacing: 1px;
+	font-size: 12px;
+	line-height: 1.5;		/* text vertical spacing */
+	padding: 15px 0;
+	border-top: 1px solid #e1f1ff;		/* fair blue */
+}
+
+.pricing-price {	/* "FREE", "$150", & "$400" */
+	color: #016ff9;	/* text color */
+	display: block; /* its a span, so it will take up its own chunk */
+	font-size: 32px;
+	font-weight: 700;	/* very bold */
+}
+
+.pricing-features-item:last-child {		/* last row of each, to frame */
+	border-bottom: 1px solid #e1f1ff;	
+}
+
+.pricing-button {
+	border: 1px solid #99d1ff;
+	border-radius: 10px;
+	color: #348efe;	/* text color */
+	display: inline-block;
+	padding: 15px 35px;
+	text-decoration: none;
+	margin: 25px 0;		/* margin creates space outside borders */
+	transition: background-color 200ms ease-in-out;
+}
+
+.pricing-button:hover, .pricing-button:focus {
+	background-color: #e1f1ff; /* fair blue */
+}
+
+.pricing-button.is-featured {	/* has additional class "is-featured" in markup to act dif if needed */
+	background-color: #48aaff;
+	color: white;
+}
+
+.pricing-button.is-featured:hover, .pricing-button.is-featured:focus {
+	background-color: #269aff;		/* slightly darker blue */
+	color: white;
+}
+
+/* designing desktop view last */
+
+@media (min-width: 900px){		/*sets breakpoint to switch styles on bigger screen*/
+	.panel {
+		flex-direction: row;	/* column in mobile */
+	}
+
+	.pricing-plan {
+		border-bottom: none;	/* had bottom borders for column veiw */
+		border-right: 1px solid #e1f1ff;	/* swapped look of dividers to right side columns */
+		padding: 25px 50px;		/* offsets border, more whitespace */
+	}
+
+	.pricing-plan:last-child {
+		border-right: none;		/* only want internal borders */
+	}
+}	
+
+.footer-class {
+	display: flex;
+	flex-direction: row;
+	box-sizing: border-box;	
+	padding: 50px 50px;
+	justify-content: center;
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	left: 0px;
+	text-align: center;
+}
+.footer-class p {
+	padding-bottom: 0;
+}
+
+/* Used flexbox to center everything in panel; 
+the body is a flexbox, centered content,
+and goes from column to row layout responding to window size. 
+Creates a stunning modern website with minimalist design, and vivid colors */
+
+/* Added semantic markup for accessiblity */
